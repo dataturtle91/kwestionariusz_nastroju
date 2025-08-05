@@ -26,13 +26,13 @@ emocje <- c("radość",
 ## Wypelnij kwestionariusz
 
 wypelnij_kwestionariusz <- function() {
-    cat("Kwestionariusz samoopisu nastroju -",Sys.Date(),"\n")    
+    cat("Kwestionariusz samoopisu nastroju -",as.character(Sys.Date()),"\n")    
     oceny <- numeric(length(emocje)) # tworzymy pusty wektor na odpowiedzi
   
     for (i in seq_along(emocje)) {
         repeat {
             wpis <- readline(paste0("Na ile dziś odczuwasz emocję: ", 
-                                    emocje[i], " (1 - 10)\n"))
+                                    emocje[i], " (1 - 10): \n "))
             
             if (wpis %in% as.character(1:10)) break
             cat("Podaj liczbę od 1 - 10 \n")
